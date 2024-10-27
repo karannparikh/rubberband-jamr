@@ -56,13 +56,13 @@ namespace RubberBand
  * The primary Rubber Band Library API is contained in the class
  * RubberBand::RubberBandStretcher. This class can perform both pitch
  * shifting and time stretching and supports every feature of the
- * library. A simpler, more limited alternative API that supports only
+ * library. A simpler, more limited API that supports only
  * pitch-shifting can be found in RubberBand::RubberBandLiveShifter.
  *
  * RubberBandStretcher supports two processing modes, offline and
  * real-time, and two processing "engines", known as the R2 or Faster
  * engine and the R3 or Finer engine. The choices of processing mode
- * and engine are fixed on construction: see
+ * and engine are fixed on construction: see the constructor
  * RubberBandStretcher::RubberBandStretcher. The two engines work
  * identically in API terms, and both of them support both offline and
  * real-time modes as described below.

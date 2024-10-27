@@ -5,7 +5,7 @@ set STARTPWD=%CD%
 set ORIGINALPATH=%PATH%
 set PATH=C:\Program Files (x86)\Windows Kits\10\bin\x64;%PATH%
 
-set vcvarsall="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
+set vcvarsall="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat"
 
 if not exist %vcvarsall% (
 @   echo "Could not find MSVC vars batch file"
@@ -26,7 +26,7 @@ if errorlevel 1 exit /b %errorlevel%
 
 del /q /s build
 
-meson build --buildtype release "-Dextra_include_dirs=C:\Program Files\libsndfile\include" "-Dextra_lib_dirs=C:\Program Files\libsndfile\lib" "-Db_vscrt=mt"
+meson setup build --buildtype release "-Dextra_include_dirs=C:\Program Files\libsndfile\include" "-Dextra_lib_dirs=C:\Program Files\libsndfile\lib" "-Db_vscrt=mt"
 if errorlevel 1 exit /b %errorlevel%
 
 ninja -C build

@@ -51,9 +51,10 @@ namespace RubberBand
  * Band Library designed for applications that need to perform
  * pitch-shifting only, without time-stretching, and to do so in a
  * straightforward block-by-block process with the shortest available
- * processing delay.
+ * processing delay. For the more general interface, see
+ * RubberBand::RubberBandStretcher.
  *
- * RubberBandLiveShifter has a much simpler API than the general
+ * RubberBandLiveShifter has a much simpler API than
  * RubberBandStretcher. Its process function, called
  * RubberBandLiveShifter::shift(), accepts a fixed number of sample
  * frames on each call and always returns exactly the same number of
@@ -61,12 +62,12 @@ namespace RubberBand
  * process/available/retrieve call sequence that RubberBandStretcher
  * requires as a result of its variable output rate.
  *
- * The number of frames RubberBandLiveShifter::shift() accepts and
- * returns is not under the caller's control: it always requires
- * exactly the number given by RubberBandLiveShifter::getBlockSize().
- * However, that number is fixed for the lifetime of the shifter, so
- * it only needs to be queried once and then fixed-size buffers may be
- * passed.
+ * The number of frames accepted by and returned from
+ * RubberBandLiveShifter::shift() are not under the caller's control:
+ * they must always be exactly the number given by
+ * RubberBandLiveShifter::getBlockSize(). But this number is fixed for
+ * the lifetime of the shifter, so it only needs to be queried once
+ * after construction and then fixed-size buffers may be used.
  *
  * Using RubberBandLiveShifter also gives a shorter processing delay
  * than a typical buffering setup using RubberBandStretcher, making it

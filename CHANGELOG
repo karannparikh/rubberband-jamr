@@ -1,4 +1,23 @@
 
+Changes in Rubber Band v4.0
+
+This release adds a new API that is simpler than the existing one in
+cases where only pitch-shifting is required.
+
+ * Add a new API, RubberBandLiveShifter, which is simpler to use
+   than the general RubberBandStretcher interface in cases where only
+   pitch-shifting is required. For more general purposes the original
+   interface is still the proper one.
+ * Fix incorrect URIs in LV2 plugins
+ * Fix stack overflow in seldom used R2 time-domain smoothing code
+ * Add support for key-frame maps (and the live shifter) to JNI interface
+ * Fix some compatibility issues and warnings with certain compilers
+
+Apart from this entirely new class, the rest of the API is unchanged
+and the library is binary compatible with existing code back to
+version 1.7.
+
+
 Changes in Rubber Band v3.3
 
 This is a bug-fix release with no changes to audio quality.

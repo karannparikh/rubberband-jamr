@@ -489,7 +489,7 @@ R3LiveShifter::generate(int requiredInOutbuf)
 
     for (int hop = 0; hop < hops; ++hop) {
 
-        Profiler profiler("R3LiveShifter::generate/loop");
+        Profiler profiler2("R3LiveShifter::generate/loop");
 
         if (toConsume <= 0) {
             m_log.log(2, "R3LiveShifter::generate: ERROR: toConsume is zero at top of loop, hop and hops", hop, hops);
